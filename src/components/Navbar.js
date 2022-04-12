@@ -1,6 +1,7 @@
 import React from 'react'
 import {AiOutlineMenu} from 'react-icons/ai'
 import Logo from '../images/logo.svg'
+import {Link} from 'react-router-dom'
 const Navbar = () => {
   const newMessage = true
   if(window.innerWidth > 770){
@@ -16,7 +17,7 @@ const Navbar = () => {
               </div>}
             </li>
             <li className="basis-1/4 p-8 cursor-pointer flex items-center justify-center text-2xl border-b-2 border-white hover:border-emerald-300 hover:text-emerald-300 hover:animate-pulse">Post</li>
-            <li className="basis-1/4 p-8 cursor-pointer flex items-center justify-center border-b-2 text-2xl border-white hover:border-emerald-300 hover:text-emerald-300 hover:animate-pulse">Konto</li>
+            <Link to={`/login`}><li className="basis-1/4 p-8 cursor-pointer flex items-center justify-center border-b-2 text-2xl border-white hover:border-emerald-300 hover:text-emerald-300 hover:animate-pulse">Konto</li></Link>
         </ul>
     </div>
     )
@@ -38,7 +39,7 @@ const Navbar = () => {
           </div>}
         </li>
           <li className="hover:border-emerald-300 w-full flex justify-center p-5 border-b-2 border-white text-2xl">Post</li>
-          <li className="hover:border-emerald-300 w-full flex justify-center p-5 border-b-2 border-white text-2xl">Konto</li>
+          <Link to={`/login`}><li className="hover:border-emerald-300 w-full flex justify-center p-5 border-b-2 border-white text-2xl">Konto</li></Link>
         </ul>
         </div>
         </div>

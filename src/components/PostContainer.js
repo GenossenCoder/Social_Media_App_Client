@@ -34,7 +34,7 @@ const PostContainer = () => {
         {loading?(<div>loading</div>):(
             data&&
             data.getPosts.map((post) =>(
-              <Post title={post.title} date={post.createdAt} author={post.username} content={post.content} id={post.id} comments={post.comments.length} like={post.likes.length} />
+              <Post title={post.title} date={post.createdAt} author={post.username} content={post.content} id={post.id} comments={post.comments.length} like={post.likes.length}/>
             ))
           )}
         </div>
