@@ -57,7 +57,7 @@ const Register = (props) => {
           <div><Navbar/></div>
           <div className="w-full h-screen flex flex-col justify-center items-center">
           <div className=" flex items-center justify-center h-screen">
-        <div className=" rounded-lg h-1/2 w-4/5  lg:w-2/3 grid grid-rows-2 grid-cols-5 md:flex md:flex-col sm:w-5/6">
+        <div className=" rounded-lg h-2/3 w-4/5  lg:w-2/3 grid grid-rows-2 grid-cols-5 md:flex md:flex-col sm:w-5/6">
           <div className="row-span-3 col-span-2 bg-white/10 flex justify-center p-8">
             <img src={Logo} className="w-72 "alt=""/>
           </div>
