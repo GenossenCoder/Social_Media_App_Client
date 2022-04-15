@@ -12,6 +12,7 @@ mutation createComment($postId: String!, $title: String!, $content: String!){
       title
       createdAt
       content
+      likes
     }
   }
 }
@@ -51,7 +52,7 @@ const CommentSection = (props) => {
           <button className="bg-emerald-300 rounded-md hover:bg-emerald-500" type="submit">Create</button>
           {error&&<div className="bg-rose-200 text-xs p-4 border-2 border-red-500 mt-3 font-bold animate-pulse text-center">You have to fill all fields</div>}
         </form>}
-        {props.data&&props.data.map((comment) =>(<Comment title={comment.title} content={comment.content} date={comment.createdAt} user={comment.username}/>))}
+        {props.data&&props.data.map((comment) =>(<Comment title={comment.title} content={comment.content} date={comment.createdAt} user={comment.username} id={comment.id} likes={comment.likes}/>))}
         </div>
     </div>
   )

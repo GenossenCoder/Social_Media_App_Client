@@ -1,4 +1,5 @@
 import React from 'react'
+import CommentLikeButton from './CommentLikeButton'
 
 const Comment = (props) => {
   return (
@@ -9,6 +10,7 @@ const Comment = (props) => {
       <div className="m-1 rounded-md text-black overflow-y-scroll break-words h-auto p-2 resize-none outline-none max-h-28">
       {props.content}
       </div>
+      <CommentLikeButton id={props.id} likes={props.likes.length}/>
     </div>
   )
 }
