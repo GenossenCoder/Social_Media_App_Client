@@ -12,7 +12,9 @@ mutation createComment($postId: String!, $title: String!, $content: String!){
       title
       createdAt
       content
-      likes
+    }
+    likes{
+      username
     }
   }
 }
