@@ -12,7 +12,7 @@ module.exports = {
 
       'sm': {'max': '639px'},
 
-      'xs': {'max': '350'},
+      'xs': {'max': '350px'},
     },
     extend: {},
   },

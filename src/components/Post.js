@@ -1,6 +1,6 @@
 import React from 'react'
 import {Link} from 'react-router-dom'
-import LikeButton from '../components/LikeButton'
+import LikeButton from './LikeButton'
 
 const Post = (props) => {
 
@@ -15,11 +15,11 @@ const Post = (props) => {
       </div>
       </Link>
       <div className="flex justify-around">
-      <a className="underline">
+      <p className="underline">
       {props.comments===0&& <h1>Comment!</h1>}
       {props.comments===1&& <h1>{props.comments} Comment</h1>}
       {props.comments>1&& <h1>{props.comments} Comments</h1>}
-      </a>
+      </p>
       <LikeButton like={props.like} id={props.id}/>
       </div>
       

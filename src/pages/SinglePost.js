@@ -45,7 +45,7 @@ const SinglePost = (props) => {
     <div>
     <Navbar/>
     <div className="flex flex-col items-center justify-center w-full h-auto ">
-    <div className=" p-2 bg-white text-black shadow-lg cursor-pointer lg:mx-20 mx-10 md:mx-0 h-full mt-40 mb-40">
+    <div className=" p-2 bg-white text-black shadow-lg cursor-pointer lg:mx-20 mx-10 md:mx-0 h-full mt-40 mb-28">
       <h1 className="text-left ml-3 mt-3 font-bold text-black border-blue-400 border-b-2 text-xl overflow-x-hidden">{data.getPost.title}</h1>
       <h2 className="text-right font-bold text-black text-xs">{data.getPost.createdAt}</h2>
       <h3 className="text-right  text-emerald-300">{data.getPost.username}</h3>
@@ -56,7 +56,8 @@ const SinglePost = (props) => {
           <LikeButton like={data.getPost.likes.length} id={data.getPost.id}/>
       </div>
       </div>
-        <CommentSection/>
+      <h1 className="font-bold underline p-2 text-xl">Comments</h1>
+        <CommentSection data={data.getPost.comments} id={postId}/>
     </div>
     </div>
     )}
