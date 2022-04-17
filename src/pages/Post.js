@@ -69,7 +69,7 @@ const Post = () => {
                         }}>
                         <div className="m-5 flex flex-col gap-4">
                             <h1 className="font-bold p-5">Make a Post!</h1>
-                            <input placeholder="Theme" className="w-5/6 outline-none p-1 text-md" onChange={(e)=>{setTheme(e.target.value)}}></input>
+                            <input placeholder="Theme" className="w-5/6 outline-none p-1 text-md" onChange={(e)=>{setTheme(e.target.value.trim())}}></input>
                             <input placeholder="Title" className="w-5/6 outline-none p-1 text-md" onChange={(e)=>{setTitle(e.target.value); validateInput(theme,title,content);}}></input>
                             <textarea className="w-full text-xs resize-none outline-none p-1 h-40"onChange={(e)=>{setContent(e.target.value); validateInput(theme,title,content);}} placeholder="What do you want to say?"></textarea>
                             {button&&<button className="bg-blue-400 rounded-md w-1/3 font-bold">Create</button>}

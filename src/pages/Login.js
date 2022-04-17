@@ -55,9 +55,9 @@ const Login = () => {
               addUser();
             }}>
             <h1 className="text-black font-bold">Username</h1>
-            <input className="p-1 bg-transparent border-b-2 border-emerald-300 outline-none" onChange={(e)=>{setUsername(e.target.value)}}/>
+            <input className="p-1 bg-transparent border-b-2 border-emerald-300 outline-none" onChange={(e)=>{setUsername(e.target.value.trim())}}/>
             <h1 className="text-black font-bold">Password</h1>
-            <input type="password" className="p-1 bg-transparent border-b-2 border-emerald-300 outline-none" onChange={(e)=>{setPassword(e.target.value)}}/>
+            <input type="password" className="p-1 bg-transparent border-b-2 border-emerald-300 outline-none" onChange={(e)=>{setPassword(e.target.value.trim())}}/>
             <button className="w-20 text-black mt-2 text-lg rounded-md bg-emerald-300 hover:animate-pulse" type="submit">Login</button>
             <Link to={'/register'}><p className="text-lg underline text-emerald-700 cursor-pointer mt-4">New to T3lk? Sign up here!</p></Link>
           </form>
