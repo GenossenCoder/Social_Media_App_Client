@@ -8,7 +8,7 @@ import {createHttpLink} from 'apollo-link-http'
 import {ApolloClient,ApolloProvider, InMemoryCache} from '@apollo/client'
 
 const httpLink = createHttpLink({
-  uri: 'https://t3lk.herokuapp.com/'
+  uri: 'https://t3lk-t.herokuapp.com/'
 })
 
 const authLink =setContext(()=>{

@@ -3,9 +3,9 @@ import {Link} from 'react-router-dom'
 import LikeButton from './LikeButton'
 
 const Post = (props) => {
-
   return (
-    <div className=" p-2 bg-white text-black overflow-hidden max-h-96 shadow-lg cursor-pointer">
+    <div>
+    <div className=" p-2 bg-white text-black overflow-hidden max-h-96 shadow-lg cursor-pointer h-auto w-auto">
       <Link to={`/posts/${props.id}`}>
       <h1 className="text-left ml-3 mt-3 font-bold text-black border-blue-400 border-b-2 text-xl overflow-x-hidden">{props.title}</h1>
       <h2 className="text-right font-bold text-black text-xs">{props.date}</h2>
@@ -23,6 +23,7 @@ const Post = (props) => {
       <LikeButton like={props.like} id={props.id}/>
       </div>
       
+    </div>
     </div>
   )
 }
