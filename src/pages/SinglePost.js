@@ -1,10 +1,21 @@
-import React from 'react'
-import {gql,useQuery} from '@apollo/client'
+import React, {useContext} from 'react'
+import {gql,useQuery,useMutation} from '@apollo/client'
 import Navbar from '../components/Navbar'
 import LikeButton from '../components/LikeButton'
 import CommentSection from '../components/CommentSection'
+import {BsFillTrashFill} from 'react-icons/bs'
+import {AuthContext} from '../Context/auth'
+import {useNavigate} from 'react-router-dom';
 
+
+const DELETE_POST = gql`
+    mutation deletePost($id: ID!){
+        deletePost(id: $id)
+    }
+`
 const SinglePost = (props) => {
+    const navigate = useNavigate();
+    const {user}=useContext(AuthContext)
     const postId=window.location.pathname.slice(7)
     const FETCH_POST_QUERY = gql`
         query ($postId:ID!){
@@ -29,6 +40,23 @@ const SinglePost = (props) => {
     const {data} = useQuery(FETCH_POST_QUERY,{
         variables: {postId}
     })
+    const [deletePost]=useMutation(DELETE_POST,{
+        update(proxy,result){
+            if(result){
+                navigate('/');
+                window.location.reload()
+            }
+
+        },
+        onError(err){
+          try{
+          }
+          catch(err){}
+        },
+        variables:{
+            id: postId
+        },
+      })
 
     if (!data){
         return(
@@ -52,8 +80,9 @@ const SinglePost = (props) => {
       <div className="m-1 rounded-md text-black  break-words h-auto p-2">
           {data.getPost.content}
       </div>
-      <div className="flex justify-end">
+      <div className="flex flex-row justify-around items-center">
           <LikeButton like={data.getPost.likes.length} id={data.getPost.id}/>
+          {user&&data.getPost.username === user.username&&<button className="bg-red-600 p-2 rounded-md hover:bg-red-700"onClick={(e)=>{deletePost()}}><BsFillTrashFill color="white"/></button>}
       </div>
       </div>
       <h1 className="font-bold underline p-2 text-xl">Comments</h1>

@@ -28,6 +28,7 @@ const Login = () => {
     update(proxy,result){
       context.login(result.data.login)
       navigate('/');
+      window.location.reload()
     },
     onError(err){
       try{
